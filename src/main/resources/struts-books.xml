@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="books" extends="ebook-default" namespace="/books">
+		<action name="*" class="cn.haohaowo.struts.action.BookAction" method="{1}">
+			<result name="list">/WEB-INF/pages/books/list.jsp</result>
+			<result name="search">/WEB-INF/pages/books/list.jsp</result>
+			<result name="show">/WEB-INF/pages/books/show.jsp</result>
+			<result name="book_not_found">/WEB-INF/pages/books/not_found.jsp</result>
+		</action>
+	</package>
+	
+</struts>

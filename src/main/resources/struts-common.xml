@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="ebook-default" extends="json-default" abstract="true">
+		<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="home" type="redirect">/home.action</result>
+		</global-results>
+	</package>
+	
+	<package name="root" extends="ebook-default" namespace="/">
+		<action name="home" class="cn.haohaowo.struts.action.HomeAction">
+			<result>/WEB-INF/pages/home.jsp</result>
+		</action>
+		<action name="help" class="cn.haohaowo.struts.action.HelpAction">
+			<result>/WEB-INF/pages/help.jsp</result>
+		</action>
+	</package>
+	
+</struts>

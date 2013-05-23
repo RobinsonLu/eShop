@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+    	<!-- 连接数据库基本参数 -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/eshop</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        
+        <!-- 数据库选择 -->
+        
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- POJO类 -->
+        <mapping class="cn.haohaowo.entity.Book"/>
+        <mapping class="cn.haohaowo.entity.Account"/>
+        <mapping class="cn.haohaowo.entity.Order"/>
+        <mapping class="cn.haohaowo.entity.OrderDetail"/>
+        
+    
+    </session-factory>
+
+</hibernate-configuration>

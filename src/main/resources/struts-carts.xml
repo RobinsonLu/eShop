@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="carts" extends="ebook-default" namespace="/carts">
+		<action name="*" class="cn.haohaowo.struts.action.CartAction" method="{1}">
+			<result name="show">/WEB-INF/pages/carts/show.jsp</result>
+			<result name="cart" type="redirectAction">show</result>
+			<result name="update_quantity" type="json"></result>
+			<result name="checkout">/WEB-INF/pages/carts/checkout.jsp</result>
+			<result name="confirm">/WEB-INF/pages/carts/order_confirm.jsp</result>
+			<result name="set_delivery_type" type="json"></result>
+		</action>
+	</package>
+</struts>

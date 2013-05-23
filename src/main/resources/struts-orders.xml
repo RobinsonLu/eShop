@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="orders" extends="ebook-default" namespace="/orders">
+		<action name="*" class="cn.haohaowo.struts.action.OrderAction" method="{1}">
+			<result name="cart" type="redirect">/carts/show.action</result>
+			<result name="create_order_success" type="redirectAction">createSuccess</result>
+			<result name="create_order_success_page">/WEB-INF/pages/orders/create_success.jsp</result>
+			<result name="list">/WEB-INF/pages/orders/list.jsp</result>
+			<result name="show">/WEB-INF/pages/orders/details.jsp</result>
+		</action>
+	</package>
+</struts>
