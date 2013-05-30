@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="accounts" namespace="/accounts" extends="ebook-default">
+	
+		<result-types>
+			<result-type name="validationCodeResult" class="cn.haohaowo.util.ValidationCodeResult"></result-type>
+		</result-types>
+		<action name="validationCode" class="cn.haohaowo.util.ValidationCodeAction">
+			<result name="success" type="validationCodeResult"/>
+		</action>
+	
+		<action name="*" class="cn.haohaowo.struts.action.AccountAction" method="{1}">
+			<result name="login">/WEB-INF/pages/accounts/login.jsp</result>
+			<result name="return_path" type="redirect">${returnPath}</result>
+			<result name="my">/WEB-INF/pages/accounts/my.jsp</result>
+			<result name="password">/WEB-INF/pages/accounts/password.jsp</result>
+			<result name="register">/WEB-INF/pages/accounts/register.jsp</result>
+			<result name="register_success" type="redirectAction">registerSuccess</result>
+			<result name="register_success_page">/WEB-INF/pages/accounts/reg_success.jsp</result>
+		</action>
+		
+		
+	</package>
+</struts>

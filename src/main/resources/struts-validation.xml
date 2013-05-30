@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="validation" extends="ebook-default" namespace="/validate">
+		<action name="uniqueUsername" class="cn.haohaowo.struts.action.validator.UniqueUsernameValidator">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="uniqueEmail" class="cn.haohaowo.struts.action.validator.UniqueEmailValidator">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="captcha" class="cn.haohaowo.struts.action.validator.CaptchaValidator">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>
